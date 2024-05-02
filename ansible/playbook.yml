@@ -1,6 +1,12 @@
 - hosts: localhost
   connection: local
   become: true
+  roles:
+    - core
+    - miscellaneous
+
+    
+
   tasks:
     - name: Update apt
       apt:
