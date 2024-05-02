@@ -15,3 +15,12 @@ ansible-playbook playbook.yml
 ```
 
 ## What will be installed
+
+- git
+- snap
+- vscode
+- docker
+- docker compose
+- spotify
+- terminator
+- pip
