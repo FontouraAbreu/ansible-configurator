@@ -1,0 +1,6 @@
+---
+- name: apply core OS configurations
+  hosts: all
+  become: true
+  roles:
+    - core
