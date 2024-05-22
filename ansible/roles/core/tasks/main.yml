@@ -1,0 +1,8 @@
+---
+- include_tasks: config_git.yml
+- include_tasks: config_case_insensitive_completion.yml
+- include_tasks: install_terminal_emulator.yml
+- include_tasks: install_docker.yml
+- include_tasks: install_spotify.yml
+- include_tasks: install_vscode.yml
+- include_tasks: install_discord.yml
