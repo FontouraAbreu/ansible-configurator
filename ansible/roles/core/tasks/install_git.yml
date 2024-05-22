@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  vars:
+
+  tasks:
+  - name: install git
+    apt:
+      name: git
+      state: latest
+      update_cache: true
