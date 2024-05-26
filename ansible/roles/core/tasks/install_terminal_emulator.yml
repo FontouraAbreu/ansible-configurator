@@ -1,0 +1,9 @@
+- hosts: all
+  become: true
+
+  tasks:
+    - name: install terminal emulator
+      apt:
+        name: terminator
+        state: latest
+        update_cache: true

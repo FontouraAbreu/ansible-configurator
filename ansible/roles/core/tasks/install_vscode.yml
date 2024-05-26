@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: install vscode
+      apt:
+        name: code
+        state: latest
+        update_cache: true

@@ -1,3 +1,4 @@
+---
 - hosts: all
   vars:
     git_user_name: "Vinícius Fontoura"
@@ -8,9 +9,10 @@
       ansible.builtin.git_config:
         name: user.name
         value: "{{ git_user_name }}"
-        global: yes
+        scope: global
 
     - name: change global user.email identification
       ansible.builtin.git_config:
         name: user.email
         value: "{{ git_user_email }}"
+        scope: global

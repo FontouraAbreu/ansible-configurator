@@ -1,0 +1,11 @@
+- hosts: all
+  become: true
+
+  tasks:
+    - name: add case insensitive completion
+      ansible.builtin.lineinfile:
+        path: /etc/inputrc
+        line: set completion-ignore-case on
+        create: yes
+        insertafter: EOF
+        backup: yes
