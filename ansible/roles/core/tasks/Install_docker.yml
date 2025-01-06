@@ -1,10 +1,9 @@
----
-- hosts: all
+- name: Install Docker
   become: true
 
   tasks:
     - name: Install required system packages
-      apt:
+      ansible.builtin.apt:
         pkg:
           - apt-transport-https
           - ca-certificates
@@ -12,19 +11,19 @@
           - software-properties-common
         state: latest
         update_cache: true
-            
+
     - name: Add Docker GPG apt Key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
+      ansible.builtin.apt_key:
+        url: "{{ core_docker_gpg_key }}"
         state: present
 
     - name: Add Docker Repository
-      apt_repository:
-        repo: deb https://download.docker.com/linux/ubuntu focal stable
+      ansible.builtin.apt_repository:
+        repo: "{{ core_docker_repo }}"
         state: present
-    
+
     - name: Update apt and install docker-ce
-      apt:
+      ansible.builtin.apt:
         name: docker-ce
         state: latest
         update_cache: true

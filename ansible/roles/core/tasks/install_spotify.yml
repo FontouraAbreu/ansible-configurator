@@ -1,9 +1,9 @@
-- hosts: all
+- name: install spotify
   become: true
-  
+
   tasks:
     - name: install spotify
-      apt:
+      ansible.builtin.apt:
         name: spotify-client
         state: latest
         update_cache: true

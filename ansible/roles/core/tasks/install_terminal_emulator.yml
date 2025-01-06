@@ -1,9 +1,9 @@
-- hosts: all
+- name: install terminal emulator
   become: true
 
   tasks:
     - name: install terminal emulator
-      apt:
+      ansible.builtin.apt:
         name: terminator
         state: latest
         update_cache: true

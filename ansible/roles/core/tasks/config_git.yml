@@ -1,9 +1,8 @@
----
-- hosts: all
+- name: Config git
   vars:
-    git_user_name: "Vinícius Fontoura"
-    git_user_email: "vinicius.fontoura@gmail.com"
-  
+    git_user_name: {{ core_git_user_name }}
+    git_user_email: {{ core_git_user_email }}
+
   tasks:
     - name: change global user.name identification
       ansible.builtin.git_config:

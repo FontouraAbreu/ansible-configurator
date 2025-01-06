@@ -1,10 +1,9 @@
----
-- hosts: all
+- name: install vscode
   become: true
 
   tasks:
     - name: install vscode
-      apt:
+      ansible.builtin.apt:
         name: code
         state: latest
         update_cache: true

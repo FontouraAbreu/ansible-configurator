@@ -1,9 +1,7 @@
-- hosts: localhost
+- name: Install and configure machine
+  hosts: localhost
   connection: local
   become: true
   roles:
     - core
     - miscellaneous
-
-    
-    
